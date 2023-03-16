@@ -1,0 +1,23 @@
+{% load static %}
+
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu des pizzas</title>
+    <link rel="stylesheet" href="pizzamama\menu\static\menu/style.css">
+</head>
+
+<body>
+    <h1>Les pizzas</h1>
+    <ul>
+        {% for pizza in pizzas %}
+        <li>{{pizza.nom}} : {{pizza.prix}}EURO</li>
+        {% endfor %}
+
+    </ul>
+</body>
+
+</html>

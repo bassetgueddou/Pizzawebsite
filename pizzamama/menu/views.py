@@ -6,7 +6,10 @@ from .models import Pizza
 
 
 def index(request):
-    pizzas = Pizza.objetcts.all()
-    pizzas_names = [pizza.nom for pizza in pizzas]
-    pizzas_names_str = ", ".join(pizzas_names)
-    return HttpResponse("Les pizzas : " + pizzas_names_str)
+    ''' pizzas = Pizza.objects.all()
+     pizzas_names = [pizza.nom + " : " +
+                     str(pizza.prix) + " EURO " for pizza in pizzas]
+     pizzas_names_str = ",".join(pizzas_names)
+     return HttpResponse("Les pizzas : " + pizzas_names_str)'''
+    pizzas = Pizza.objects.all()
+    return render(request, 'menu/index.html', {'pizzas': pizzas})
